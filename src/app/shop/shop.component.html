@@ -8,7 +8,7 @@
             
             <div class="list-group">
                 <a href="#" class="list-group-item list-group-item action" (click)="changeCategory()">
-                    Tüm Kategoriler
+                    All Categories
                 </a>
                 <a *ngFor="let c of categories" (click)="changeCategory(c)" href="#"
                     class="list-group-item list-group-item action" [class.active]="c==selectedCategory">
