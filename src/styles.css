@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.pt-100 {
+    padding-top: 100px;
+}
+
+.ml-3 {
+    margin-left: 1rem;
+}
+
+.ml-2{
+    margin-left: 0.7rem;
+}

@@ -1,3 +1,74 @@
-<div class="alert alert-success">
-    Cart detail component
+<navbar></navbar>
+
+<div class="container pt-100 mb-5">
+    <h1 class="mb-2">Shopping Cart</h1>
+    <div class="row">
+        <div class="col-8">
+
+            <ng-container *ngIf="cart.itemCount>0">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of cart.items">
+                            <td>
+                                <img src="assets/img/{{item.product.imageUrl}}" width="80">
+                            </td>
+                            <td>{{item.product.name}}</td>
+                            <td>{{item.product.price}} EUR</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.quantity * item.product.price}} EUR</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fa fa-times fa-fw"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ng-container>
+
+
+            <ng-container *ngIf="cart.itemCount==0">
+                <div class="alert alert-warning mt-3">
+                    There are no items in your cart <br>
+                    <button routerLink="/shop" class="btn btn-link p-0">
+                        Click to continue shopping.
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+        <div class="col-4">
+            <ng-container *ngIf="cart.itemCount>0">
+                <div class="text-left">
+                    <h4>Shopping Summary</h4>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Total</th>
+                            <td>{{cart.total}} EUR</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <button routerLink="/shop" class="btn btn-primary btn-sm">
+                        Click to continue shopping
+                    </button>
+                    <button routerLink="/checkout" class="btn btn-primary btn-sm ml-2">
+                        Complete the shopping
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+    </div>
 </div>

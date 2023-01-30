@@ -7,13 +7,13 @@
             <cart-summary></cart-summary>
             
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item action" (click)="changeCategory()">
+                <button class="list-group-item list-group-item action" (click)="changeCategory()">
                     All Categories
-                </a>
-                <a *ngFor="let c of categories" (click)="changeCategory(c)" href="#"
+                </button>
+                <button *ngFor="let c of categories" (click)="changeCategory(c)"
                     class="list-group-item list-group-item action" [class.active]="c==selectedCategory">
                     {{c.name}}
-                </a>
+                </button>
             </div>
         </div>
         <div class="col-9">
