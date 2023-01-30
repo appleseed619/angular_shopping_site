@@ -1,3 +1,20 @@
+<div class="row border m-0 p-3 mb-4" *ngIf="selectedProduct">
+    <div class="col-md-2">
+        <img class="img-fluid" src="/assets/img/{{selectedProduct.imageUrl}}" alt="{{selectedProduct.name}}">
+    </div>
+    <div class="col-md-10 ">
+        <h5 class="card-title">
+            {{selectedProduct.name}}
+        </h5>
+        <p class="card-text">
+            {{selectedProduct.description}}
+        </p>
+        <button (click)="hideDetails()" class="btn btn-danger btn-sm">Cancel the Selection</button>
+        <button (click)="addProductToCart(selectedProduct)" class="btn btn-outline-primary btn-sm ml-3">
+            Ad To Cart</button>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-4" *ngFor="let p of products">
         <div class="card mb-3">
@@ -11,7 +28,7 @@
                 </small>
             </div>
             <div class="card-footer text-center">
-                <button class="btn btn-outline-primary btn-sm">Details</button>
+                <button (click)="displayDetails(p)" class="btn btn-outline-primary btn-sm">Details</button>
                 <button (click)="addProductToCart(p)" class="btn btn-outline-primary btn-sm ml-3">Ad To
                     Cart</button>
             </div>
