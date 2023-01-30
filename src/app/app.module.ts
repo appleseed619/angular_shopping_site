@@ -10,7 +10,7 @@ import { ShopModule } from './shop/shop.module';
   ],
   imports: [
     BrowserModule,
-    ShopModule
+    ShopModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,7 +6,8 @@ import { Category } from '../model/category.model';
 
 @Component({
     selector: 'shop',
-    templateUrl: 'shop.component.html'
+    templateUrl: 'shop.component.html',
+    styles: [`.pt-100 { padding-top: 100px;} .ml-3 { margin-left: 1rem; }`]
 })
 
 export class ShopComponent {
