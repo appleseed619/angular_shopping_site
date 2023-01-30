@@ -5,44 +5,28 @@
         <div class="col-3">
 
             <cart-summary></cart-summary>
-            
-            <div class="list-group">
-                <button class="list-group-item list-group-item action" (click)="changeCategory()">
-                    All Categories
-                </button>
-                <button *ngFor="let c of categories" (click)="changeCategory(c)"
-                    class="list-group-item list-group-item action" [class.active]="c==selectedCategory">
-                    {{c.name}}
-                </button>
-            </div>
+
+            <category-list (category)="getCategory($event)"></category-list>
         </div>
         <div class="col-9">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="alert alert-warning">
-                        {{products.length}} products found.
-                    </div>
-                </div>
-                <ng-container *ngFor="let p of products">
-                    <div class="col-md-4">
-                        <div class="card mb-3">
-                            <img src="/assets/img/{{p.imageUrl}}" alt="{{p.name}}">
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="">{{p.name}}</a>
-                                </h4>
-                                <small class="text-muted">
-                                    <i class="fas fa-lira-sign"></i> {{p.price}}
-                                </small>
-                            </div>
-                            <div class="card-footer text-center">
-                                <button class="btn btn-outline-primary btn-sm">Details</button>
-                                <button (click)="addProductToCart(p)" class="btn btn-outline-primary btn-sm ml-3">Ad To Cart</button>
-                            </div>
+                    <div class="alert alert-warning d-flex justify-content-between align-center w-100">
+                        <span class="float-left">{{selectedProducts.length}} products found.</span>
+                        <div class="form-inline float-right m-0 p-0">
+                            <select class="form-control-sm" [value]="productsPerPage"
+                                (change)="changePageSize($any($event.target).value)">
+                                <option value="2">2 pieces</option>
+                                <option value="3">3 pieces</option>
+                                <option value="4">4 pieces</option>
+                                <option value="6">6 pieces</option>
+                                <option value="8">8 pieces</option>
+                            </select>
                         </div>
                     </div>
-                </ng-container>
+                </div>            
             </div>
+            <product-list [products]="products"></product-list>
             <div class="row mt-3">
                 <div class="col">
                     <div class="btn-group">

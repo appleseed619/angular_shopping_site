@@ -7,6 +7,14 @@
     margin-left: 1rem;
 }
 
-.ml-2{
+.ml-2 {
     margin-left: 0.7rem;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.p-0 {
+    padding: 0;
 }
