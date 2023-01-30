@@ -1,4 +1,5 @@
 import { Injectable, OnInit } from "@angular/core";
+import { Category } from "./category.model";
 import { Product } from "./product.model";
 import { RestService } from "./rest.service";
 
@@ -17,8 +18,12 @@ export class ProductRepository implements OnInit {
         return this.products.find(i => i.id == id);
     }
 
-    getProducts(): Product[] {
-        return this.products;
+    getProducts(category: Category = null): Product[] {
+        if (category) {
+            return this.products.filter(p=> p.category === category.name);
+        }else{
+            return this.products;
+        }
     }
 
 }
