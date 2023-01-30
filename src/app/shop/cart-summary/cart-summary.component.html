@@ -1,0 +1,7 @@
+<div class="alert alert-success">
+    <span *ngIf="cart.itemCount>0">
+        There are {{cart.itemCount}} items on your cart. <br>
+        Total price: {{cart.total}}
+    </span>
+    <span *ngIf="cart.itemCount==0">You haven't added any products to your cart yet.</span>
+</div>

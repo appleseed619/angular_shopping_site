@@ -3,6 +3,9 @@
 <div class="container pt-100 mb-5">
     <div class="row">
         <div class="col-3">
+
+            <cart-summary></cart-summary>
+            
             <div class="list-group">
                 <a href="#" class="list-group-item list-group-item action" (click)="changeCategory()">
                     Tüm Kategoriler
@@ -34,7 +37,7 @@
                             </div>
                             <div class="card-footer text-center">
                                 <button class="btn btn-outline-primary btn-sm">Details</button>
-                                <button class="btn btn-outline-primary btn-sm ml-3">Ad To Cart</button>
+                                <button (click)="addProductToCart(p)" class="btn btn-outline-primary btn-sm ml-3">Ad To Cart</button>
                             </div>
                         </div>
                     </div>
