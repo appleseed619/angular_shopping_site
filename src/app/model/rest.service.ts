@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { Category } from './category.model';
 import { Product } from './product.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RestService {
 
   baseUrl: string = "http://localhost:3500/";
