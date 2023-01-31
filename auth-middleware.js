@@ -20,7 +20,7 @@ module.exports = function (req, res, next) {
             let token = req.headers['authorization'];
 
             if (token != null && token.startsWith('Bearer<')) {
-                token = token.substring(7, token.length);
+                token = token.substring(7, token.length - 1);
                 try {
                     jwt.verify(token, app_secret);
                     next();
