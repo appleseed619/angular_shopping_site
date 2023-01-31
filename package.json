@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "json": "json-server data.js -p 3500"
+    "json": "json-server data.js -p 3500 -m auth-middleware.js"
   },
   "private": true,
   "dependencies": {
