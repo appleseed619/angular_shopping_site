@@ -1,4 +1,4 @@
-# Angular Shoping App
+# Angular Shopping App
 
 ## Start Project
 - `npm install` to install all dependencies
